@@ -32,6 +32,9 @@
     });
   });
 
+  //Starting the kafka-consumer
+  require('./kafka-reader/kafka-client')(app, io);
+
   // Starting the server
   http.listen(PORT);
   console.log(`Listening on port ${PORT}...`);
