@@ -17,7 +17,8 @@
 
   //APP Setup =========================
   app.use(express.static(__dirname + '/visceral'))    // to serve ui static assets
-  app.use(bodyParser.json());                       // to parse application/json
+  app.use(bodyParser.json({limit: '50mb'}));          // to parse application/json
+  app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
   // Load all the routes
   require('./routes')(app, io);
