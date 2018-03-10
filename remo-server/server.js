@@ -16,7 +16,7 @@
   const PORT  = process.env.PORT || 3000;
 
   //APP Setup =========================
-  app.use(express.static(__dirname + '/public'))    // to serve ui static assets
+  app.use(express.static(__dirname + '/visceral'))    // to serve ui static assets
   app.use(bodyParser.json());                       // to parse application/json
 
   // Load all the routes

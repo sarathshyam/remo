@@ -1,0 +1,145 @@
+{
+  "renderer": "global",
+  "name": "edge",
+  "nodes": [
+    {
+      "renderer": "region",
+      "name": "INTERNET",
+      "class": "normal"
+    },
+    {
+      "renderer": "region",
+      "name": "Bonotel Prod",
+      "displayName": "Bonotel",
+      "maxVolume": 300,
+      "class": "normal",
+      "updated": 1466838546805,
+      "nodes": [
+        {
+          "name": "ALB",
+          "renderer": "focusedChild",
+          "class": "normal"
+        },
+        {
+          "name": "B2B",
+          "renderer": "focusedChild",
+          "class": "normal"
+        },
+        {
+          "name": "Selling-Availability",
+          "renderer": "focusedChild",
+          "class": "normal"
+        },
+        {
+          "name": "Selling",
+          "renderer": "focusedChild",
+          "class": "normal"
+        },
+        {
+          "name": "AE",
+          "renderer": "focusedChild",
+          "class": "normal"
+        },
+        {
+          "name": "Production",
+          "renderer": "focusedChild",
+          "class": "normal"
+        },
+        {
+          "name": "Common",
+          "renderer": "focusedChild",
+          "class": "normal"
+        },
+        {
+          "name": "CSG",
+          "renderer": "focusedChild",
+          "class": "normal"
+        },
+        {
+          "name": "Console",
+          "renderer": "focusedChild",
+          "class": "normal"
+        }
+      ],
+      "connections": [
+        {
+          "source": "ALB",
+          "target": "Selling-Availability",
+          "metrics": {
+            "danger": 3,
+            "normal": 60
+          },
+          "class": "normal"
+        },
+        {
+          "source": "Selling-Availability",
+          "target": "AE",
+          "metrics": {
+            "danger": 3,
+            "normal": 60
+          },
+          "class": "normal"
+        },
+        {
+          "source": "Selling-Availability",
+          "target": "Common",
+          "metrics": {
+            "danger": 0,
+            "normal": 180
+          },
+          "class": "normal"
+        },
+        {
+          "source": "Common",
+          "target": "Production",
+          "metrics": {
+            "danger": 0,
+            "normal": 180
+          },
+          "class": "normal"
+        },
+        {
+          "source": "AE",
+          "target": "Production",
+          "metrics": {
+            "danger": 0,
+            "normal": 180
+          },
+          "class": "normal"
+        },
+        {
+          "source": "ALB",
+          "target": "Selling",
+          "metrics": {
+            "danger": 2,
+            "normal": 10
+          },
+          "class": "normal"
+        },
+        {
+          "source": "ALB",
+          "target": "B2B",
+          "metrics": {
+            "danger": 0,
+            "normal": 2
+          },
+          "class": "normal"
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "source": "INTERNET",
+      "target": "Bonotel Prod",
+      "metrics": {
+        "normal": 100,
+        "danger": 5
+      },
+      "notices": [
+      ],
+      "class": "normal"
+    }
+  ],
+  "serverUpdateTime": 1477691777441
+}

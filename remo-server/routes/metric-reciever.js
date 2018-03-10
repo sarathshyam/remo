@@ -8,7 +8,7 @@ module.exports = function(app, io){
     // Web console -------------------------------------------------------------
     app.post('/broadcast', function(req, res){
         console.log('posting.. ' + req.body.value);
-        io.sockets.emit('broadcast',req.body);
+        io.sockets.emit('visceral',req.body);
         res.send('OK');
     });
  };
